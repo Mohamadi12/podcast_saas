@@ -1,15 +1,18 @@
-import React from 'react'
+import LeftSidebar from "@/components/LeftSidebar";
+import React from "react";
 
-const Layout = async ({children}:Readonly<{children: React.ReactNode}>) => {
+const Layout = async ({
+  children,
+}: Readonly<{ children: React.ReactNode }>) => {
   return (
     <div>
-        <main>
-            <p className='text-white-1'>LEFT SIDEBAR</p>
-            {children}
-            <p className='text-white-1'>RIGHT SIDEBAR</p>
-        </main>
+      <main>
+        <LeftSidebar />
+        {children}
+        <p className="text-white-1">RIGHT SIDEBAR</p>
+      </main>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
