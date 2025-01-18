@@ -68,12 +68,16 @@ const CreatePodcast = () => {
     },
   });
 
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values)
+  }
+
   return (
     <section className="mt-10 flex flex-col">
       <h1 className="text-20 font-bold text-white-1">Create Podcast</h1>
 
       <Form {...form}>
-        <form className="mt-12 w-full flex-col">
+        <form className="mt-12 w-full flex-col" onSubmit={form.handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-[30px] border-b border-black-5 pb-10">
             <FormField
               control={form.control}

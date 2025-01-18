@@ -3,6 +3,7 @@ import MobileNav from "@/components/MobileNav";
 import RightSidebar from "@/components/RightSidebar";
 import Image from "next/image";
 import React from "react";
+import { Toaster } from "@/components/ui/toaster"
 
 const Layout = async ({
   children,
@@ -23,7 +24,7 @@ const Layout = async ({
              <MobileNav />
             </div>
             <div className="flex flex-col md:pb-14">
-              Toaster
+             <Toaster />
               {children}
             </div>
           </div>
