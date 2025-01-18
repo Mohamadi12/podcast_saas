@@ -53,8 +53,8 @@ const CreatePodcast = () => {
   const [audioDuration, setAudioDuration] = useState(0);
 
   //Les voices
-  const [voicePrompt, setVoicePrompt] = useState<string | null>(null);
   const [voiceType, setVoiceType] = useState<string | null>(null);
+  const [voicePrompt, setVoicePrompt] = useState("");
 
   //Soumettre
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -152,15 +152,15 @@ const CreatePodcast = () => {
           </div>
 
           <div className="flex flex-col pt-10">
-            <GeneratePodcast 
-                  setAudioStorageId={setAudioStorageId}
-                  setAudio={setAudioUrl}
-                  voiceType={voiceType!}
-                  audio={audioUrl}
-                  voicePrompt={voicePrompt}
-                  setVoicePrompt={setVoicePrompt}
-                  setAudioDuration={setAudioDuration}
-                />
+            <GeneratePodcast
+              setAudioStorageId={setAudioStorageId}
+              setAudio={setAudioUrl}
+              voiceType={voiceType!}
+              audio={audioUrl}
+              voicePrompt={voicePrompt}
+              setVoicePrompt={setVoicePrompt}
+              setAudioDuration={setAudioDuration}
+            />
 
             <GenerateThumbnail />
 
