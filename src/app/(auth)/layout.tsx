@@ -1,9 +1,17 @@
-import React from "react";
+import Image from "next/image";
 
-const Layout = async ({
+export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) => {
-  return <main>{children}</main>;
-};
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <main className="relative h-screen w-full">
+      <div className="absolute size-full">
+        <Image src="/images/bg-img.png" alt="background" fill className="size-full" />
+      </div>
 
-export default Layout;
+      {children}
+    </main>
+  );
+}
